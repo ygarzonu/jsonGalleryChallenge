@@ -1,0 +1,85 @@
+/* Variables */
+$white: #FFFFFF;
+$yellow: #ffff00;
+$orange: #ff9900;
+$blue: #005EAE;
+
+/* Global Styles */
+@font-face {
+   font-family: NeoSansIntel;
+   src: url(../../fonts/NeoSansIntel-Medium.ttf) format('truetype');
+}
+
+h1{
+	font-family:NeoSansIntel;
+}
+
+a {
+	color: $orange;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+footer a {
+	color: $white;
+}
+
+
+
+
+/* Body */
+
+.Title_Bar {
+	background-image: url(../../img/Title-Bar.png);
+    position: absolute;
+	top: -21px;
+	width: 974px;
+	height: 74px;
+	z-index: 24;
+	color: #ffff00;
+	text-align: center;
+}
+
+
+
+#Main{
+	background-image: url(../../img/mainBG.jpg);
+	position: absolute;
+	top: 45px;
+	width: 974px;
+	height: 597px;
+	z-index: 3;
+}
+
+
+.leftButton {
+  background-image: url(../../img/left-arrow.png);
+  position: absolute;
+  left: 213px;
+  top: 303px;
+  width: 11px;
+  height: 22px;
+  z-index: 15;
+}
+
+.main_image {
+  background-image: url(../../img/main image.png);
+  position: absolute;
+  left: 240px;
+  top: 112px;
+  width: 493px;
+  height: 404px;
+  z-index: 21;
+}
+
+
+#Thumbnail {
+  background-image: url(../../img/Thumbnail-Bar.png);
+  position: absolute;
+  width: 974px;
+  height: 123px;
+  bottom: -105px;
+  z-index: 2;
+}
