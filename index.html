@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Bavaria Challenge | Yeiny Garzón</title>
 		<link href="assets/css/gallery_json.css" rel="stylesheet">
     	<link href="assets/css/style.css" rel="stylesheet">
@@ -14,25 +15,23 @@
 		</header>
 
 		<section id="Main">		
-			<div class="mainImage">
-				
+			<div class="mainImage">				
 			</div>
-			<div class="prevButton">
-				<button id="prevImg" class="btnPrev"></button>		
+			<div id="prevImg" class="btnPrev">	
 			</div>
-			<div class="nextButton">
-				<button id="NextImg" class="btnNext"></button>
+			<div id="NextImg" class="btnNext">
 			</div>			
 		</section>
 		<section id="Thumbnail" >
 			<div id="json-gallery">
-				<ul></ul>
+				<ul id="images"></ul>
 			</div>
 		</section>
 
 
     <!-- JavaScript -->
-    <script src="assets/js/gallery_json.js"></script>
+    <script src="assets/js/gallery.json"></script>
     <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/jquery.js"></script>
 	</body>
 </html>
