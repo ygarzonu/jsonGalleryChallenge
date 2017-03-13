@@ -1,8 +1,10 @@
+
 /* Variables */
 $white: #FFFFFF;
 $yellow: #ffff00;
 $orange: #ff9900;
 $blue: #005EAE;
+
 
 /* Global Styles */
 @font-face {
@@ -25,8 +27,6 @@ a:hover {
 footer a {
 	color: $white;
 }
-
-
 
 
 /* Body */
@@ -52,10 +52,8 @@ footer a {
 }
 
 .btnPrev, .btnNext{
-  background: $white;
-  -webkit-box-shadow: 0px 0px 57px 0px rgba(4,6,9,0.25);
-  -moz-box-shadow: 0px 0px 57px 0px rgba(4,6,9,0.25);
-  box-shadow: 0px 0px 57px 0px rgba(4,6,9,0.25);
+  background: #718996;
+  opacity: 0.4;
   position: absolute;
   top: 210px;
   width: 40px;
@@ -65,12 +63,30 @@ footer a {
 
 .btnPrev {
   background-image: url(../../img/left-arrow.png);
-  left: 210px;
+  box-shadow: -2px 2px 2px 0px rgba(4,6,9,0.25);
+  left: 209px;
 }
 
 .btnNext {
   background-image: url(../../img/right-arrow.png);
+  box-shadow: 2px 2px 2px 0px rgba(4,6,9,0.25);
   left: 745px;  
+}
+
+#Thumbnail {
+  background-image: url(../../img/Thumbnail-Bar.png);
+  position: absolute;
+  width: 974px;
+  height: 123px;
+  bottom: -48px;
+  z-index: 3;
+}
+ 
+/* json */
+#json-gallery .img-thumbnail {
+  width: 614px;
+  height: 71px;
+  z-index: 6;
 }
 
 .mainImage {
@@ -83,17 +99,13 @@ footer a {
   z-index: 3;
 }
 
-
-#Thumbnail {
-  background-image: url(../../img/Thumbnail-Bar.png);
-  position: absolute;
-  width: 974px;
-  height: 123px;
-  bottom: -48px;
+.info{
+  position: relative;
+  justify-content: center; 
   z-index: 3;
 }
 
-#images {
+#img-thumbnail {
  margin-top: 50px;
  margin-top: 50px;
  width: 85%;
@@ -103,7 +115,7 @@ footer a {
   z-index: 4;
 }
 
-#images li {
+#img-thumbnail li {
  position: absolute !important; /* important needed for Safari. Weird! */
  width: 102px;
  height: 61px;
@@ -120,8 +132,7 @@ padding: 5px 5px 30px 5px;
 z-index: 4;
 }
  
-#images img {
+#img-thumbnail img {
  width: 100%;
  height: 100%;
 }
- 

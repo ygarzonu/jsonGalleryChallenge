@@ -1,27 +1,25 @@
-$(document).ready( function(){
+$(document).ready(function(){
 
 	$.getJSON('js/gallery.json', function (data) {
+		var html = "";
 	    $.each(data.photos, function (i, f) {
-	    	var img = "<li><img id='" + f.id + "' src='" + f.thumb_url + "' alt='" + f.title + "' /></li>";
-	    	$("ul").append(img);
-	    	$("#Thumbnail").click( function(){
-		    	var fullImg = "<li data-full-url='" + f.image +"'></li><li caption='" + f.title + "'></li>";
-		    	$(".mainImage").select(fullImg);
-		    });
+	    //	var img = "<li><img id='" + f.id + "' src='" + f.thumb_url + "' alt='" + f.title + "' /></li>";
+	    	console.log(f);
+	    	html += "<ul>" + f.thumb_url;
+	//    	$("ul").append(img);
+	//    	$("#Thumbnail").click( function(){
+	//	    	var fullImg = "<li data-full-url='" + f.image +"'></li>";
+	//	    	var info = "<li '" + f.title + "' Taken at the Intel Conference in '" + f.location + "', '"f.date + "'></li>";
+	//	    	$(".mainImage").select(fullImg);
+	//	    	$(".info").text(info);
+	//	    });
 		});
+		$("#img-thumbnail").append(html);
 	});
 
-	$('#prevImg').click( function(){
-
+	
+	$('.btnPrev').click( function(){			
+		$('.mainImage').fadeOut(500).delay(300).slideDown(800);
 	});
-
 });
-$.getJSON('data.json', function(data) { // Get data from JSON file
-     try{
-      var json = $.parseJSON(data);
-      for (var i =0; i< json.images.length; i++) {
-        var output+=json.images[i].bannerImg1; // Place image in variable output
-     }
-      document.getElementById("banner-img").innerHTML=output;
-     }catch{}
-    }); 
+
