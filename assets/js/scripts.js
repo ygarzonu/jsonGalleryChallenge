@@ -1,28 +1,58 @@
 $(document).ready(function(){
 
+	$html = "";
 	$.getJSON('assets/js/gallery.json', function (data) {
-	//	console.log(data.photos);
-		var html = "";
+		
+		var title = data.album;
+		$("h1").show(title);
+	
 	    $.each(data.photos, function (i, f) {
 	  		var img = "<li><img id='" + f.id + "' src='" + f.thumb_url + "' alt='" + f.title + "' /></li>";
-	    	console.log(f);
-	    	html += "<ul>" + img;
+	    	//console.log(f);	
+	    	$("ul").append(img); //DOM -> Insert html elements
 
-	    	
-	    	$("ul").append(img);
-	//    	$("#Thumbnail").click( function(){
-	//	    	var fullImg = "<li data-full-url='" + f.image +"'></li>";
-	//	    	var info = "<li '" + f.title + "' Taken at the Intel Conference in '" + f.location + "', '"f.date + "'></li>";
-	//	    	$(".mainImage").select(fullImg);
-	//	    	$(".info").text(info);
-		    });
-	//	});
-		$(".img-thumbnail").append(html);
-	});
-
+	    	$html += "<li><h1>'" + f.title + "'</h1></li>'";
+            $html += "'<li><p> Taken at the Intel Conference in '" + f.location + "', '" + f.date + "'</p></li>'";
+            //console.log($html);
+		});
+	    
 	
+		$("#json-gallery").on({
+			mouseover: function(){
+				$(this).css({
+					'cursor': 'pointer'
+				});
+			},
+			mouseout: function(){
+				$(this).css({
+					'cursor': 'default'
+				});
+			},
+			click: function(){
+				$(this).animate({
+				    width: "14%",
+				    opacity: 0.4,
+				    marginLeft: "0.1in"
+	  			}, 1000 ); 
+
+				$('.info ul').appendTo($html);	
+
+				var thumbnail = $(this).attr('src');
+				//var fullimage = "<img id='" + data.photos.id + "' src='" + data.photos.image + "' alt='" + data.photos.title + "' />";
+				$("#fullimg").fadeOut(300, function(){
+					for (var i in data.photos) {
+						var fullimage = data.photos[i].image;
+						$(this).attr('src', fullimage);	
+					}
+				}).fadeIn(300);	
+
+			}
+		}, 'img');
+		
+	});
+	
+
 	$('.btnPrev').click( function(){			
 		$('.mainImage').fadeOut(500).delay(300).slideDown(800);
 	});
 });
-
