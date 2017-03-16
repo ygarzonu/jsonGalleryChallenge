@@ -84,6 +84,7 @@ footer a {
  
 /* json */
 #json-gallery .img-thumbnail {
+  position: relative;
   width: 614px;
   height: 71px;
   z-index: 6;

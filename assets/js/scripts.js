@@ -1,20 +1,23 @@
 $(document).ready(function(){
 
-	$.getJSON('js/gallery.json', function (data) {
+	$.getJSON('assets/js/gallery.json', function (data) {
+	//	console.log(data.photos);
 		var html = "";
 	    $.each(data.photos, function (i, f) {
-	    //	var img = "<li><img id='" + f.id + "' src='" + f.thumb_url + "' alt='" + f.title + "' /></li>";
+	  		var img = "<li><img id='" + f.id + "' src='" + f.thumb_url + "' alt='" + f.title + "' /></li>";
 	    	console.log(f);
-	    	html += "<ul>" + f.thumb_url;
-	//    	$("ul").append(img);
+	    	html += "<ul>" + img;
+
+	    	
+	    	$("ul").append(img);
 	//    	$("#Thumbnail").click( function(){
 	//	    	var fullImg = "<li data-full-url='" + f.image +"'></li>";
 	//	    	var info = "<li '" + f.title + "' Taken at the Intel Conference in '" + f.location + "', '"f.date + "'></li>";
 	//	    	$(".mainImage").select(fullImg);
 	//	    	$(".info").text(info);
-	//	    });
-		});
-		$("#img-thumbnail").append(html);
+		    });
+	//	});
+		$(".img-thumbnail").append(html);
 	});
 
 	
